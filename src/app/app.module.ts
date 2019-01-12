@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './quote-form/quote-form.component';
 
 @NgModule({
   declarations: [
