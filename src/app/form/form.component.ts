@@ -8,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  // option tag loop options
+  options = [
+    {category: 'love'},
+    {category: 'life'},
+    {category: 'work'},
+    {category: 'religious'}
+  ];
+
  
 
   constructor() {

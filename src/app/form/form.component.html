@@ -1,24 +1,28 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col">
-        <h1>Publish your Quote</h1>
+    <div class="col" id="publish">
+        <h1>Publish</h1>
         <form>
 
           <div class="form-group">
             <!-- category field -->
-            <label for="quoteCategory">Category</label>
-            <input type="text" class="form-control" id="category" required>
+            <label for="category">Category: </label>
+            <select class="form-control" name="" id="" required>
+
+              <!-- use ng for to loop through choices of categories (interpolation) -->
+              <option *ngFor= "let option of options">{{option.category}}</option>
+            </select>
           </div>
 
           <div class="form-group">
             <!-- quote field -->
-            <label for="name">Quote</label>
+            <label for="quote">Quote: </label>
             <textarea name="quote" class="form-control"  id="quote" cols="30" rows="10" required></textarea>
           </div>
 
           <div class="form-group">
             <!-- author field -->
-            <label for="author">Author</label>
+            <label for="author">Author: </label>
             <input type="text" class="form-control" id="author">
           </div>
 
@@ -39,7 +43,7 @@
       </div>
 
       <!-- display time stamp here -->
-      <div>
+      <div class="">
         date submitted
       </div>
       
