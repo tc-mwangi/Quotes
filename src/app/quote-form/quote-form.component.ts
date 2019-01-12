@@ -11,6 +11,7 @@ export class FormComponent implements OnInit {
 
     // option tag loop options
     options = [
+      {category: ''},
       {category: 'Life'},
       {category: 'Love'},
       {category: 'Work'},
@@ -29,10 +30,18 @@ export class FormComponent implements OnInit {
 //   category: 'Life',
 // }
   
-  // default object to be changed by form inputs
-
   
-  model=new Quote(0, 'Get busy living or get busy dying.', 'Stephen King', 'Kelly Morgan','Life');
+
+
+    // default object to be changed by form inputs
+  model=new Quote(1, 'Get busy living or get busy dying.', 'Stephen King', 'Kelly Morgan','Life');
+
+    // when this button is clicked inputs to be displayed on quotes bar
+    newQuote(){
+
+      this.model = new Quote(0, '', '', '', '')
+
+    }
 
   
   // sample quotes array

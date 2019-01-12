@@ -4,3 +4,10 @@
   background-color: #ff6b6b;
 }
 
+
+#quote-display {
+  margin: 2em;
+  text-align: left;
+  background-color: #4ecdc4;
+  max-height: 200px;
+}
