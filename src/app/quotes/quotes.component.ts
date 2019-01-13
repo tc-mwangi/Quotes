@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote} from '../quote'
+import { Quote } from '../quote'
+import { QUOTES } from '../mock-quotes'
+
 @Component({
   selector: 'app-quotes',
   templateUrl: './quotes.component.html',
@@ -7,16 +9,18 @@ import { Quote} from '../quote'
 })
 export class QuotesComponent implements OnInit {
 
+  quotes = QUOTES;
+
 
   // quote object
-  quote: Quote = {
-    id: 0,
-    quote: 'Life sucks',
-    author: 'Confucious',
-    contributor: 'Jiliette Mukami',
-    category: 'life',
-    dateSubmitted: new Date(2018,3,14)
-  }
+  // quote: Quote = {
+  //   id: 0,
+  //   quote: 'Life sucks',
+  //   author: 'Confucious',
+  //   contributor: 'Jiliette Mukami',
+  //   category: 'life',
+  //   dateSubmitted: new Date(2018,3,14)
+  // }
 
 
   constructor() { }

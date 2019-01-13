@@ -6,7 +6,7 @@ export class Quote {
         public author: string,
         public contributor: string,
         public category: string,
-        public dateSubmitted: Date
+        public dateSubmitted: string
         
     ){}
 }
