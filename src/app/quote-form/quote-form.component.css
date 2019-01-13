@@ -1,7 +1,8 @@
-#publish {
+#submit-form {
   margin: 2em;
   text-align: left;
-  background-color: #757575;
+  border: #ff0022;
+  /* background-color: #757575; */
 }
 
 
@@ -39,9 +40,16 @@
   background-color: #01baef;
 }
 
-/* end of buttons */
+#edit{
+  color: #ffffff;
+  background-color: #01baef;
+}
 
 #publish{
-  color: #b91372;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #41ead4;;
 }
+
+/* end of buttons */
+
+
