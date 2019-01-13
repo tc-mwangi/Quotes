@@ -3,7 +3,7 @@
     <div class="col" id="publish">
         <h1>Publish</h1>
 
-        <form #quoteForm="ngForm">
+        <form (ngSubmit)="publishQuote()"  #quoteForm="ngForm">
           <div class="form-group">
             <!-- quote field -->
             <label for="quote">Quote: </label>
@@ -49,7 +49,7 @@
               <select class="form-control" name="category" id="category" required [(ngModel)]="model.category">
 
               <!-- category field validation -->
-          <div [hidden]="category.valid || category.pristine" class="alert alert-danger">
+          <div [hidden]="contributor.valid || contributor.pristine" class="alert alert-danger">
 
               This field is required!
   
@@ -67,7 +67,7 @@
       </div>
       <!-- 2-way data binding displays here -->
       <div class="col" id="quote-display">
-        {{model.id}}
+        <!-- {{model.id}} -->
         {{model.quote}}
         {{model.author}}
         {{model.contributor}}

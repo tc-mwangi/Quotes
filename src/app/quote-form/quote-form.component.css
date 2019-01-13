@@ -1,13 +1,30 @@
 #publish {
   margin: 2em;
   text-align: left;
-  background-color: #ff6b6b;
+  background-color: #757575;
 }
 
 
-#quote-display {
+/* #quote-display {
   margin: 2em;
   text-align: left;
-  background-color: #4ecdc4;
-  max-height: 200px;
+  background-color: #342e9f;
+  
+  max-height: 100px;
+} */
+
+#quote-text {
+  color: #d9780b;
+
 }
+
+/* form validation cues */
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 10px solid #41ead4; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 10px solid #ff0022; /* red */
+}
+
