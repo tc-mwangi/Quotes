@@ -11,6 +11,13 @@ export class QuotesComponent implements OnInit {
 
   quotes = QUOTES;
 
+  selectedQuote: Quote;
+  onSelect(quote: Quote): void {
+    this.selectedQuote = quote;
+  }
+
+  
+
 
   // quote object
   // quote: Quote = {

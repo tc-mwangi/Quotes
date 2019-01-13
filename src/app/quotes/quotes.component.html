@@ -4,10 +4,11 @@
 <div><span>contributor: </span>{{contributor.id}}</div>
 <div><span>category: </span>{{category.quote}}</div> -->
 <!-- <div><span>dateSubmitted: </span>{{dateSubmitted.id}}</div> -->
+
 <h2>My Quotes</h2>
-<ul class="article">
-  <li *ngFor="let quote of quotes">
-    <span class="article">{{quote.id}}</span> {{quote.quote}}
+<ul class="quotes">
+  <li *ngFor="let quote of quotes" (click)="onSelect(quote)">
+    <span class="badge">{{quote.id}}</span> {{quote.quote}}
   </li>
 </ul>
 
