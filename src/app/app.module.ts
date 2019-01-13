@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FormComponent } from './quote-form/quote-form.component';
 import { QuoteArticleComponent } from './quote-article/quote-article.component';
 import { QuotesComponent } from './quotes/quotes.component';
+import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { QuotesComponent } from './quotes/quotes.component';
     HomeComponent,
     FormComponent,
     QuoteArticleComponent,
-    QuotesComponent
+    QuotesComponent,
+    QuoteDetailComponent
   ],
   imports: [
     BrowserModule,

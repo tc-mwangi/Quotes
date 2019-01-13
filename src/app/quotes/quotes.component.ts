@@ -12,9 +12,8 @@ export class QuotesComponent implements OnInit {
   quotes = QUOTES;
 
   selectedQuote: Quote;
-  onSelect(quote: Quote): void {
-    this.selectedQuote = quote;
-  }
+
+
 
   
 
@@ -33,6 +32,10 @@ export class QuotesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(quote: Quote): void {
+    this.selectedQuote = quote;
   }
 
 }

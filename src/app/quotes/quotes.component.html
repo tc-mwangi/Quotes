@@ -6,19 +6,21 @@
 <!-- <div><span>dateSubmitted: </span>{{dateSubmitted.id}}</div> -->
 
 <h2>My Quotes</h2>
+
 <ul class="quotes">
-  <li *ngFor="let quote of quotes" (click)="onSelect(quote)">
+
+  <li *ngFor="let quote of quotes" (click)="onSelect(quote)" [class.selected]="quote === selectedQuote">
     <span class="badge">{{quote.id}}</span> {{quote.quote}}
   </li>
+
 </ul>
 
-<h2>{{selectedQuote.name}} Details</h2>
-<div><span>id: </span>{{selectedQuote.id}}</div>
-<div>
-  <label>quote:
-    <input [(ngModel)]="selectedQuote.quote" placeholder="quote">
-  </label>
-</div>
+<!-- property binding -->
+
+
+<app-quote-detail [quote]="selectedQuote"></app-quote-detail>
+
+
 
 
 
