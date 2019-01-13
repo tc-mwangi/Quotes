@@ -1,0 +1,15 @@
+<!-- <h2>{{quote.id}} Details</h2>
+<div><span>quote: </span>{{quote.quote}}</div>
+<div><span>author: </span>{{author.quote}}</div>
+<div><span>contributor: </span>{{contributor.id}}</div>
+<div><span>category: </span>{{category.quote}}</div> -->
+<!-- <div><span>dateSubmitted: </span>{{dateSubmitted.id}}</div> -->
+<h2>{{quote.quote}}</h2>
+<div>
+  <label for=""></label>
+  <!-- two-way data binding -->
+  <input type="text" [(ngModel)]= 'quote.quote' placeholder='quote here'>
+</div>
+
+
+

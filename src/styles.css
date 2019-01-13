@@ -3,5 +3,25 @@
 @import "~font-awesome/css/font-awesome.css";
 @import "./assets/fonts/Acumin Pro/stylesheet.css";
 
-
+h1 {
+  color: #369;
+  font-family: 'Acumin Pro';
+  font-size: 250%;
+}
+h2, h3 {
+  color: #444;
+  font-family: 'Acumin Pro';
+  font-weight: lighter;
+}
+body {
+  margin: 2em;
+}
+body, input[type="text"], button {
+  color: #888;
+  font-family: 'Acumin Pro';
+}
+/* everywhere else */
+* {
+  font-family: 'Acumin Pro';
+}
 
