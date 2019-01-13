@@ -28,3 +28,20 @@
   border-left: 10px solid #ff0022; /* red */
 }
 
+/* buttons */
+#submit{
+  color: #ffffff;
+  background-color: #b91372;
+}
+
+#reset{
+  color: #ffffff;
+  background-color: #01baef;
+}
+
+/* end of buttons */
+
+#publish{
+  color: #b91372;
+  background-color: #ffffff;
+}
