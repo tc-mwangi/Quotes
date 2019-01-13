@@ -32,13 +32,14 @@ export class HomeComponent implements OnInit {
 
     new Quote(10, 'You will face many defeats in life, but never let yourself be defeated.', 'Andrew Ranja', 'Maya Angelou', 'Miscellaneous')
   ]
+  
 
-  addNewQuote(quote){
-    let quoteLength = this.quotes.length;
-    quote.id = quoteLength +1;
-    this.quotes.push(quote);
+  // addNewQuote(quote){
+  //   let quoteLength = this.quotes.length;
+  //   quote.id = quoteLength +1;
+  //   this.quotes.push(quote);
 
-  }
+  // }
 
 
 

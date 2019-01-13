@@ -32,7 +32,7 @@
 /* buttons */
 #submit{
   color: #ffffff;
-  background-color: #b91372;
+  background-color: #41ead4;;
 }
 
 #reset{
@@ -40,16 +40,21 @@
   background-color: #01baef;
 }
 
-#edit{
+#delete{
   color: #ffffff;
   background-color: #01baef;
 }
 
 #publish{
   color: #ffffff;
-  background-color: #41ead4;;
+  background-color: #41ead4;
 }
 
 /* end of buttons */
+
+.article {
+  background-color: #d9780b;
+  color: blue;
+}
 
 
