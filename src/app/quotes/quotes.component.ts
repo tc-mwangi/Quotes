@@ -18,7 +18,7 @@ export class QuotesComponent implements OnInit {
   
 
 
-  // quote object
+  // quote object test
   // quote: Quote = {
   //   id: 0,
   //   quote: 'Life sucks',

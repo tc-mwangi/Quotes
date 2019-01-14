@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { FormComponent } from './quote-form/quote-form.component';
-import { QuoteArticleComponent } from './quote-article/quote-article.component';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { QuoteVoteComponent } from './quote-vote/quote-vote.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
 
@@ -18,8 +18,8 @@ import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FormComponent,
-    QuoteArticleComponent,
+    QuoteFormComponent,
+    QuoteVoteComponent,
     QuotesComponent,
     QuoteDetailComponent
   ],

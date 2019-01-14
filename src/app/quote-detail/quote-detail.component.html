@@ -1,7 +1,7 @@
 <div *ngIf="quote">
 
-    <h2>{{quote.author} Details</h2>
-    <div><span>id: </span>{{quote.id}}</div>
+    <h2>Quote Details</h2>
+    <div><span>contributor: </span>{{quote.contributor}}</div>
     <div>
       <label>name:
         <input [(ngModel)]="quote.author" placeholder="author"/>
@@ -9,3 +9,9 @@
     </div>
   
   </div>
+
+ <!-- property binding -->
+
+ <!-- 
+<app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
+<app-quote-form></app-quote-form>

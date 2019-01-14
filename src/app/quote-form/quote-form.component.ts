@@ -4,11 +4,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quote }    from '../quote'; 
 
 @Component({
-  selector: 'app-form',
+  selector: 'app-quote-form',
   templateUrl: './quote-form.component.html',
   styleUrls: ['./quote-form.component.css']
 })
-export class FormComponent implements OnInit {
+export class QuoteFormComponent implements OnInit {
 
     // option tag loop options
     options = [
