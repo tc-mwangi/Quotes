@@ -153,14 +153,14 @@
           - confirm whether user wants to publish publishAlert();
           - display published quote
            -->
-        <button type="submit" id="publish" class="btn btn-default btn-block" (click)="showAlertPublish();">Publish</button>
+        <button type="submit" id="publish" class="btn btn-default btn-block">Publish</button>
       
         <!-- delete button
           - confirm whether user wants to delete showAlertPublish();
           - delete published quote
         
         -->
-        <button class="btn btn-default btn-block" id="delete" (click)="submitted=false; showAlertDelete(); ">Delete</button>
+        <button class="btn btn-default btn-block" id="delete" (click)="submitted=false;">Delete</button>
       
         <!-- new quote button 
         when button is clicked:
@@ -173,7 +173,7 @@
 
 
 
-<div [hidden]=!submitted id="article">
+<!-- <div [hidden]=!submitted id="article">
     <ul quote-listing>
         <li *ngFor='let quote of quotes'>
             <div class="single-quote">
@@ -193,7 +193,7 @@
         </li>
 
       </ul>
-</div>
+</div> -->
 
 
 <div class="container">
