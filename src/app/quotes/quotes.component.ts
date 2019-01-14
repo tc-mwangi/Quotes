@@ -11,6 +11,7 @@ export class QuotesComponent implements OnInit {
 
   quotes = QUOTES;
 
+
   selectedQuote: Quote;
 
 
@@ -39,3 +40,6 @@ export class QuotesComponent implements OnInit {
   }
 
 }
+
+
+

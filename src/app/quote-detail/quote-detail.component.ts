@@ -10,6 +10,21 @@ import { Quote } from '../quote'
 
 export class QuoteDetailComponent implements OnInit {
 
+  // quotes array
+  quotes = [
+  ];
+
+  addmodel(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.quote = quote;
+    this.quotes.push(quote)
+
+  }
+
+
+
+
   @Input() quote: Quote;
 
   constructor() { }

@@ -14,4 +14,10 @@
 
  <!-- 
 <app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
-<app-quote-form></app-quote-form>
+<div class="container">
+
+  <div class="row">
+      <app-quote-form (addGoal)="addmodel($event)"></app-quote-form>
+  </div>
+  
+</div>
