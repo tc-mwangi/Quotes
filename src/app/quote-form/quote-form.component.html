@@ -1,8 +1,7 @@
 <div class container>
 
-<div class="container-fluid">
   <div class="row">
-    <div class="col-12" id="submit-form">
+    <div class="col" id="submit-form">
         <h1>Publish your Quote</h1>
         <!-- ...onSubmit(); too!  -->
         <form (ngSubmit)="submitQuote(); onSubmit()" #quoteForm="ngForm"> 
@@ -95,28 +94,23 @@
       </div>
 
       
-      <!-- 2-way data binding displays here -->
       
-        <!-- {{model.id}} -->
-        <!-- {{model.quote}}
-        {{model.author}}
-        {{model.contributor}}
-        {{model.category}} -->
 
       </div>
 
 
     </div>
+    <!-- end of form -->
 
-</div>
+
 
 
 
 <!-- display form output -->
 
-<div class="container">
-  <div class="container-fluid">
-    <div class="row">
+
+  
+    <div class="col">
 
 
         <!-- start form -->
@@ -175,18 +169,42 @@
         <button class="btn btn-default btn-block" id="new" (click)="submitted=false">New Quote</button>
       
       </div>
-  </div>
-</div>
+  
+
 
 
 <div [hidden]=!submitted id="article">
     <ul quote-listing>
         <li *ngFor='let quote of quotes'>
             <div class="single-quote">
+
+              <label for="quote">Quote : </label>
               <p>" {{ model.quote }} "</p>
+
+              <label for="author">Author : </label>
               <p>- {{ model.author }}</p>
+
+              <label for="contributor">Contributor : </label>
+              <p>" {{ model.contributor }} "</p>
+
+              <label for="category">Category : </label>
+              <p>" {{ model.category }} "</p>
             </div>
         </li>
 
       </ul>
+</div>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-6">
+        
+      </div>
+      <div class="col-6">
+        
+    </div>
+    
+    
+    </div>
 </div>

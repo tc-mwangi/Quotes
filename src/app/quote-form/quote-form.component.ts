@@ -9,7 +9,6 @@ import { Quote }    from '../quote';
   styleUrls: ['./quote-form.component.css']
 })
 export class QuoteFormComponent implements OnInit {
-
   
 
     // option tag loop options
@@ -25,10 +24,10 @@ export class QuoteFormComponent implements OnInit {
     ];
 
         // object to loop through loop quotes
-        displayQuotes = [
-          {quote: ''},
-          {author: ''}
-        ];
+        // displayQuotes = [
+        //   {quote: ''},
+        //   {author: ''}
+        // ];
 
 
 

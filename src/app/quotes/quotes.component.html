@@ -23,9 +23,9 @@
   <h1>See details and Vote</h1>
 
   <li [hidden]="shown" *ngFor="let quote of quotes">
-     " {{quote}} " <span>
+     " {{quote.quote}} " <span>
        <br>
-      - {{quote}}</span>
+      - {{quote.author}}</span>
   </li>
   <!-- to be supplied by details component<button [hidden]="!shown" class="btn btn-default" (click)="onSelect()" [class.selected]="quote === selectedQuote">see details</button> -->
 
