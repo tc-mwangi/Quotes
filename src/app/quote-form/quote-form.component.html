@@ -86,7 +86,7 @@
      
         </form>
 
-        <p></p>
+        
       </div>
 
       
@@ -105,58 +105,7 @@
       <div [hidden]=!submitted>
           <h4></h4>
 
-          <form (ngSubmit)='submitQuote()' #quoteForm="ngForm">
-          <div class="row">
-            
-            <div class="">{{ model.quote }}</div>
-          </div>
-
-          <div class="row">
-            
-            <div class="">{{ model.author }}</div>
-          </div>
-
-          <div class="row">
-            
-            <div class="">{{ model.contributor }}</div>
-          </div>
-
-          <div class="row">
-            
-              <div class="">{{ model.category }}</div>
-            </div>
-
-        </form>
-          <br>
-
-          <!-- post button -->
           
-          <button type="submit" id="publish" class="btn btn-default btn-block" (click)="quoteForm.reset(); ">Post</button>
-
-<!-- submit button
-<button type="submit" id="submit" class="btn btn-default btn-block" [disabled]="!quoteForm.form.valid">Submit</button> -->
-          
-          
-          <!-- delete button -->
-          <button class="btn btn-default btn-block" id="delete" (click)="submitted=false">Delete</button>
-
-          
-          <div [hidden]=submitted id="article">
-              <ul quote-listing>
-                  <li *ngFor='let quote of quotes'>
-                      <div class="single-quote">
-                        <p>{{ model.quote }}</p>
-                        <p>{{ model.author }}</p>
-                        <p>{{ model.contributor }}</p>
-                      
-                      </div>
-                  </li>
-    
-                </ul>
-          </div>
-
-          
-
         </div>
       </div>
 
@@ -172,25 +121,37 @@
 <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
 
   <div [hidden]=!submitted>
+
   <div class="form-group">
-    {{ model.id }}
+    " {{ model.quote }} "
   </div>
 
   <div class="form-group">
-    {{ model.quote }}
-  </div>
-
-  <div class="form-group">
-    {{ model.author }}
-  </div>
-
-  <div class="form-group">
-    {{ model.contributor }}
+    - {{ model.author }}
   </div>
 
 </div>
 
 </form>
 
+<div>
   <!-- *** publish button -->
   <button type="submit" id="submit" class="btn btn-default btn-block">Publish</button>
+
+  <!-- delete button -->
+  <button class="btn btn-default btn-block" id="delete" (click)="submitted=false">Delete</button>
+
+</div>
+
+
+<div [hidden]=!submitted id="article">
+    <ul quote-listing>
+        <li *ngFor='let quote of quotes'>
+            <div class="single-quote">
+              <p>{{ model.quote }}</p>
+              <p>{{ model.author }}</p>
+            </div>
+        </li>
+
+      </ul>
+</div>
