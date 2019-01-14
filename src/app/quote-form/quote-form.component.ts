@@ -22,6 +22,14 @@ export class QuoteFormComponent implements OnInit {
   
     ];
 
+        // object to loop through loop quotes
+        displayQuotes = [
+          {quote: ''},
+          {author: ''}
+        ];
+
+
+
       // sample quotes array
   quotes = [
     new Quote(1, 'Get busy living or get busy dying.', 'Stephen King', 'Kelly Morgan', 'Life', 'new Date(2018,3,14)'),
@@ -72,8 +80,21 @@ export class QuoteFormComponent implements OnInit {
 
     }
 
+    showAlert(){
+      
+
+    }
 
 
+    deleteGoal(index){
+      if (isDelete){
+          let toDelete=confirm(`Are you sure you want to delete ${this.quotes[index].quote}`)
+          
+          if(toDelete){
+              this.quote.splice(index,1)
+          }
+      }
+  }
    
 
   

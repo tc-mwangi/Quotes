@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12" id="submit-form">
+    <div [hidden]="submitted" class="col-12" id="submit-form">
         <h1>Publish your Quote</h1>
 
         <form (ngSubmit)="onSubmit(); submitQuote()" #quoteForm="ngForm">
@@ -67,6 +67,11 @@
             <div class="col-6">
 
           <!-- *** submit button -->
+          <!-- when clicked:
+          - hide form.
+          - diplay inputs.
+          - ask user if they want to publish the inputs. -->
+
           <button type="submit" id="submit" class="btn btn-default btn-block" [disabled]="!quoteForm.form.valid">Submit</button>
 
          
@@ -77,7 +82,7 @@
 
           <!-- reset button -->
 
-          <button type="button" id="reset" class="btn btn-default btn-block" (click)="newQuote(); quoteForm.reset()">Reset</button>
+          <button type="button" id="reset" class="btn btn-default btn-block" (click)="newQuote(); quoteForm.reset()" >Reset</button>
 
         </div>
 
@@ -100,15 +105,6 @@
 
       </div>
 
-      <div class="container-fluid">
-          <h1></h1>
-      <div [hidden]=!submitted>
-          <h4></h4>
-
-          
-        </div>
-      </div>
-
 
     </div>
 
@@ -116,31 +112,62 @@
 
 
 
+<!-- display form output -->
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
 
 
-<form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+        <!-- start form -->
+        <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
 
-  <div [hidden]=!submitted>
+            <div [hidden]=!submitted>
 
-  <div class="form-group">
-    " {{ model.quote }} "
+              <p>This is what you have submitted: </p>
+          
+            <div class="form-group">
+              " {{ model.quote }} "
+            </div>
+          
+            <div class="form-group">
+              - {{ model.author }}
+            </div>
+          
+          </div>
+          
+          </form>
+          <!-- end of form -->
+
+          <!-- control buttons -->
+
+      
+    </div>
+
+    <div [hidden]=!submitted>
+
+        <!-- *** submit button -->
+          <!-- when clicked:
+          - confirm whether user wants to publish publishAlert();
+          - display published quote
+           -->
+        <button type="submit" id="publish" class="btn btn-default btn-block" (click)="showAlertPublish();">Publish</button>
+      
+        <!-- delete button
+          - confirm whether user wants to delete showAlertPublish();
+          - delete published quote
+        
+        -->
+        <button class="btn btn-default btn-block" id="delete" (click)="submitted=false; showAlertDelete(); ">Delete</button>
+      
+        <!-- new quote button 
+        when button is clicked:
+        - form should be reset.
+        - -->
+        <button class="btn btn-default btn-block" id="new" (click)="submitted=false">New Quote</button>
+      
+      </div>
   </div>
-
-  <div class="form-group">
-    - {{ model.author }}
-  </div>
-
-</div>
-
-</form>
-
-<div>
-  <!-- *** publish button -->
-  <button type="submit" id="submit" class="btn btn-default btn-block">Publish</button>
-
-  <!-- delete button -->
-  <button class="btn btn-default btn-block" id="delete" (click)="submitted=false">Delete</button>
-
 </div>
 
 
@@ -148,8 +175,8 @@
     <ul quote-listing>
         <li *ngFor='let quote of quotes'>
             <div class="single-quote">
-              <p>{{ model.quote }}</p>
-              <p>{{ model.author }}</p>
+              <p>" {{ model.quote }} "</p>
+              <p>- {{ model.author }}</p>
             </div>
         </li>
 
