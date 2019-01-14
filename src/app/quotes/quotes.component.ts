@@ -9,25 +9,30 @@ import { QUOTES } from '../mock-quotes'
 })
 export class QuotesComponent implements OnInit {
 
-  quotes = QUOTES;
+      // sample quotes array
+  quotes = [
+    
+  ]
+
+  addmodel(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quote.Length+1;
+    quote.quote = quote;
+    quote.author = quote;
+    this.quotes.push(quote)
+
+}
+
+  // quotes = QUOTES;
 
 
-  selectedQuote: Quote;
+  // selectedQuote: Quote;
 
 
 
   
 
 
-  // quote object test
-  // quote: Quote = {
-  //   id: 0,
-  //   quote: 'Life sucks',
-  //   author: 'Confucious',
-  //   contributor: 'Jiliette Mukami',
-  //   category: 'life',
-  //   dateSubmitted: new Date(2018,3,14)
-  // }
 
 
   constructor() { }
@@ -35,9 +40,9 @@ export class QuotesComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(quote: Quote): void {
-    this.selectedQuote = quote;
-  }
+  // onSelect(quote: Quote): void {
+  //   this.selectedQuote = quote;
+  // }
 
 }
 

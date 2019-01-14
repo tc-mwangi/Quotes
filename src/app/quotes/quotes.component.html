@@ -5,12 +5,11 @@
 <div><span>category: </span>{{category.quote}}</div> -->
 <!-- <div><span>dateSubmitted: </span>{{dateSubmitted.id}}</div> -->
 
-<h2>Quotes</h2>
 
 <ul class="quotes">
 
   <li *ngFor="let quote of quotes" (click)="onSelect(quote)" [class.selected]="quote === selectedQuote">
-    <span class="badge">{{quote.id}}</span> " {{quote.quote}} " <span>- {{quote.author}}</span>
+    <span class="badge">{{quote.id}}</span> " {{quote}} " <span>- {{quote}}</span>
   </li>
 
 </ul>
@@ -18,7 +17,17 @@
 <!-- property binding -->
 
 
-<app-quote-detail [quote]="selectedQuote"></app-quote-detail>
+<!-- <app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
+
+<h2>Posted Quotes</h2>
+
+<div class="container">
+
+    <div class="row">
+        <app-quote-form (addQuote)="addmodel($event)"></app-quote-form>
+    </div>
+    
+</div>
 
 
 

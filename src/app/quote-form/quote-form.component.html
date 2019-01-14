@@ -2,10 +2,10 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div [hidden]="submitted" class="col-12" id="submit-form">
+    <div class="col-12" id="submit-form">
         <h1>Publish your Quote</h1>
-
-        <form (ngSubmit)="onSubmit(); submitQuote()" #quoteForm="ngForm">
+        <!-- ...onSubmit(); too!  -->
+        <form (ngSubmit)="submitQuote(); onSubmit()" #quoteForm="ngForm"> 
           <div class="form-group">
             <!-- quote field -->
             <label for="quote">Quote: </label>
@@ -58,7 +58,7 @@
           </div>
   
                 <!-- use ng for to loop through choices of categories (interpolation) -->
-                <option *ngFor= "let option of options">{{option.category}}</option>
+                <option placeholder="Pick Category" *ngFor= "let option of options">{{option.category}}</option>
               </select>
             </div>
 
@@ -125,13 +125,17 @@
             <div [hidden]=!submitted>
 
               <p>This is what you have submitted: </p>
-          
-            <div class="form-group">
-              " {{ model.quote }} "
-            </div>
-          
-            <div class="form-group">
-              - {{ model.author }}
+            <div class= "rounded" id = "submitted">
+              <div class="form-field">
+                " {{ quote }} "
+              </div>
+
+              <br>
+            
+              <div class="form-group">
+                - {{ author }}
+              </div>
+
             </div>
           
           </div>
@@ -143,6 +147,10 @@
 
       
     </div>
+
+    <br>
+    <br>
+  
 
     <div [hidden]=!submitted>
 

@@ -62,4 +62,16 @@
   color: blue;
 }
 
+#submitted {
+  margin: 2px;
+  padding: 5px;
+  border: 2px solid #41ead4;
+  border-radius: 1px;
+  color: #757575; 
+  text-align: center;
+  text-transform: italic;
+  
+
+}
+
 
