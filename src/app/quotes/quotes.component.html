@@ -5,22 +5,6 @@
 <div><span>category: </span>{{category.quote}}</div> -->
 <!-- <div><span>dateSubmitted: </span>{{dateSubmitted.id}}</div> -->
 
-
-<ul class="quotes">
-
-  <li *ngFor="let quote of quotes" (click)="onSelect(quote)" [class.selected]="quote === selectedQuote">
-    <span class="badge">{{quote.id}}</span> " {{quote}} " <span>- {{quote}}</span>
-  </li>
-
-</ul>
-
-<!-- property binding -->
-
-
-<!-- <app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
-
-<h2>Posted Quotes</h2>
-
 <div class="container">
 
     <div class="row">
@@ -28,6 +12,41 @@
     </div>
     
 </div>
+
+
+<div  [hidden]="!quotePublished">
+<h2>Posted Quotes</h2>
+
+
+<ul id="posted" class="quotes">
+
+  <h1>See details and Vote</h1>
+
+  <li [hidden]="shown" *ngFor="let quote of quotes">
+     " {{quote}} " <span>
+       <br>
+      - {{quote}}</span>
+  </li>
+  <!-- to be supplied by details component<button [hidden]="!shown" class="btn btn-default" (click)="onSelect()" [class.selected]="quote === selectedQuote">see details</button> -->
+
+</ul>
+
+</div>
+
+
+
+
+
+
+
+<!-- property binding -->
+
+
+<!-- <app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
+
+
+
+
 
 
 

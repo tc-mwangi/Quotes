@@ -47,3 +47,14 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 } */
+
+
+#posted {
+    margin: 2px;
+    padding: 5px;
+    border: 2px solid #41ead4;
+    border-radius: 1px;
+    color: #757575; 
+    text-align: center;
+    text-transform: italic;
+}

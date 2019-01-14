@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { Quote } from '../quote'
 import { QUOTES } from '../mock-quotes'
 
@@ -23,12 +23,16 @@ export class QuotesComponent implements OnInit {
 
 }
 
-  // quotes = QUOTES;
+  
 
 
-  // selectedQuote: Quote;
+  selectedQuote: Quote;
 
+  quotePublished = true;
 
+  onSelect(quote: Quote): void {
+    this.selectedQuote = quote;
+  }
 
   
 
@@ -40,9 +44,7 @@ export class QuotesComponent implements OnInit {
   ngOnInit() {
   }
 
-  // onSelect(quote: Quote): void {
-  //   this.selectedQuote = quote;
-  // }
+ 
 
 }
 
