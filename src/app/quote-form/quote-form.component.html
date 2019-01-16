@@ -1,210 +1,72 @@
-<div class container>
-
-  <div class="row">
-    <div class="col" id="submit-form">
-        <h1>Publish your Quote</h1>
-        <!-- ...onSubmit(); too!  -->
-        <form (ngSubmit)="submitQuote(); onSubmit()" #quoteForm="ngForm"> 
-          <div class="form-group">
-            <!-- quote field -->
-            <label for="quote">Quote: </label>
-            <textarea name="quote" class="form-control"  id="quote" cols="" rows="10" [(ngModel)]="model.quote" #quote="ngModel" required></textarea>
-          </div>
-
-          <!-- quote field validation -->
-          <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
-
-            This field is required!
-
-          </div>
-
-          <div class="form-group">
-            <!-- author field -->
-            <label for="author">Author: </label>
-            <input type="text" name="author" class="form-control" id="author" [(ngModel)]="model.author" #author="ngModel" required>
-          </div>
-
-          <!-- author field validation -->
-          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
-
-              This field is required!
-  
-          </div>
-
-          <div class="form-group">
-            <!-- contributor field -->
-            <label for="contributor">Contributor: </label>
-            <input type="text" name="contributor" class="form-control" id="contributor" [(ngModel)]="model.contributor" #contributor="ngModel" required>
-          </div>
-
-          <!-- contributor field validation -->
-          <div [hidden]="contributor.valid || contributor.pristine" class="alert alert-danger">
-
-              This field is required!
-  
-          </div>
-
-          <div class="form-group">
-              <!-- category field -->
-              <label for="category">Category: </label>
-              <select class="form-control" name="category" id="category" required [(ngModel)]="model.category">
-
-              <!-- category field validation -->
-          <div [hidden]="contributor.valid || contributor.pristine" class="alert alert-danger">
-
-              This field is required!
-  
-          </div>
-  
-                <!-- use ng for to loop through choices of categories (interpolation) -->
-                <option placeholder="Pick Category" *ngFor= "let option of options">{{option.category}}</option>
-              </select>
-            </div>
-
-          <div class="row">
-
-            <div class="col-6">
-
-          <!-- *** submit button -->
-          <!-- when clicked:
-          - hide form.
-          - diplay inputs.
-          - ask user if they want to publish the inputs. -->
-
-          <button type="submit" id="submit" class="btn btn-default btn-block" [disabled]="!quoteForm.form.valid">Submit</button>
-
-         
-
-            </div>
-
-            <div class="col-6">
-
-          <!-- reset button -->
-
-          <button type="button" id="reset" class="btn btn-default btn-block" (click)="newQuote(); quoteForm.reset()" >Reset</button>
-
-        </div>
-
-          </div>
-
-     
-        </form>
-
-        
-      </div>
-
-      
-      
-
-      </div>
-
-
-    </div>
-    <!-- end of form -->
-
-
-
-
-
-<!-- display form output -->
-
-
-  
-    <div class="col">
-
-
-        <!-- start form -->
-        <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
-
-            <div [hidden]=!submitted>
-
-              <p>This is what you have submitted: </p>
-            <div class= "rounded" id = "submitted">
-              <div class="form-field">
-                " {{ model.quote }} "
-              </div>
-
-              <br>
-            
-              <div class="form-group">
-                - {{ model.author }}
-              </div>
-
-            </div>
-          
-          </div>
-          
-          </form>
-          <!-- end of form -->
-
-          <!-- control buttons -->
-
-      
-    </div>
-
-    <br>
-    <br>
-  
-
-    <div [hidden]=!submitted>
-
-        <!-- *** submit button -->
-          <!-- when clicked:
-          - confirm whether user wants to publish publishAlert();
-          - display published quote
-           -->
-        <button type="submit" id="publish" class="btn btn-default btn-block">Publish</button>
-      
-        <!-- delete button
-          - confirm whether user wants to delete showAlertPublish();
-          - delete published quote
-        
-        -->
-        <button class="btn btn-default btn-block" id="delete" (click)="submitted=false;">Delete</button>
-      
-        <!-- new quote button 
-        when button is clicked:
-        - form should be reset.
-        - -->
-        <button class="btn btn-default btn-block" id="new" (click)="submitted=false">New Quote</button>
-      
-      </div>
-  
-
-
-
-<!-- <div [hidden]=!submitted id="article">
-    <ul quote-listing>
-        <li *ngFor='let quote of quotes'>
-            <div class="single-quote">
-
-              <label for="quote">Quote : </label>
-              <p>" {{ model.quote }} "</p>
-
-              <label for="author">Author : </label>
-              <p>- {{ model.author }}</p>
-
-              <label for="contributor">Contributor : </label>
-              <p>" {{ model.contributor }} "</p>
-
-              <label for="category">Category : </label>
-              <p>" {{ model.category }} "</p>
-            </div>
-        </li>
-
-      </ul>
-</div> -->
-
-
 <div class="container">
-    <div class="row">
-      <div class="col-6">
-        
+  <div [hidden]="submitted">
+    <h1>Publish</h1>
+    <form (ngSubmit)="onSubmit()" #quoteForm="ngForm">
+      <div class="form-group">
+        <label for="quote">Quote: </label>
+        <input type="text" class="form-control" id="quote"
+               required
+               [(ngModel)]="model.quote" name="quote"
+               #quote="ngModel">
+        <div [hidden]="quote.valid || quote.pristine"
+             class="alert alert-danger">
+          Quote is required!
+        </div>
       </div>
-      <div class="col-6">
-        
+
+      <div class="form-group">
+        <label for="Author">Author: </label>
+        <input type="text" class="form-control" id="author"
+               [(ngModel)]="model.author" name="author">
+      </div>
+
+      <div class="form-group">
+        <label for="Contributor">Contributor: </label>
+        <input type="text" class="form-control" id="contributor"
+               [(ngModel)]="model.contributor" name="contributor">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category: </label>
+        <select class="form-control" id="category"
+                required
+                [(ngModel)]="model.category" name="option"
+                #option="ngModel">
+          <option *ngFor="let option of options" [value]="option">{{option}}</option>
+        </select>
+        <div [hidden]="option.valid || option.pristine" class="alert alert-danger">
+          Contributor is required
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!quoteForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newQuote(); quoteForm.reset()">New Hero</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Quote</div>
+      <div class="col-xs-9">{{ model.quote }}</div>
     </div>
-    
-    
+    <div class="row">
+      <div class="col-xs-3">Author</div>
+      <div class="col-xs-9">{{ model.author }}</div>
     </div>
+    <div class="row">
+      <div class="col-xs-3">Contributor</div>
+      <div class="col-xs-9">{{ model.contributor }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Category</div>
+      <div class="col-xs-9">{{ model.category }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
 </div>
+
+
