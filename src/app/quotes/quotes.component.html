@@ -1,41 +1,16 @@
-<div class="container">
 
-    <div class="row">
-        <app-quote-form (addQuote)="addmodel($event)"></app-quote-form>
-    </div>
-    
-</div>
+<!-- <h2>Quotes</h2> -->
 
-
-<div  [hidden]="!quotePublished">
-<h2>Posted Quotes</h2>
-
-
-<ul id="posted" class="quotes">
-
-  <h1>See details and Vote</h1>
-
-  <li [hidden]="shown" *ngFor="let quote of quotes">
-     " {{quote.quote}} " <span>
-       <br>
-      - {{quote.author}}</span>
+<ul class="quote-list">
+  <li *ngFor="let quote of quotes"
+    [class.selected]="quote === selectedQuote"
+    (click)="onSelect(quote)">
+    <span class="badge">{{quote.id}}</span> {{quote.author}}
   </li>
-  <!-- to be supplied by details component<button [hidden]="!shown" class="btn btn-default" (click)="onSelect()" [class.selected]="quote === selectedQuote">see details</button> -->
-
 </ul>
 
-</div>
 
-
-
-
-
-
-
-<!-- property binding -->
-
-
-<!-- <app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
+<app-quote-detail [quote]="selectedQuote"></app-quote-detail>
 
 
 

@@ -23,7 +23,9 @@ export class QuoteFormComponent implements OnInit {
 
     // default object to be changed by form inputs
     
-    model = new Quote(1, 'Get busy living or get busy dying.', 'Stephen King', 'Kelly Morgan','option', 'new Date(2018,3,14)');
+    // model = new Quote(1, 'Get busy living or get busy dying.', 'Stephen King', 'Kelly Morgan','option', 'new Date(2018,3,14)');
+
+    model = new Quote(1, '', '', '','', '');
 
     // hide and show
     submitted = false;

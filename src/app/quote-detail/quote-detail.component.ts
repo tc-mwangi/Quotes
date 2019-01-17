@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Quote } from '../quote'
 
 @Component({
@@ -9,23 +9,6 @@ import { Quote } from '../quote'
 
 
 export class QuoteDetailComponent implements OnInit {
-
-  
-
-  // quotes array
-  quotes = [
-  ];
-
-  addmodel(quote){
-    let quoteLength = this.quotes.length;
-    quote.id = quoteLength+1;
-    quote.quote = quote;
-    this.quotes.push(quote)
-
-  }
-
-
-
 
   @Input() quote: Quote;
 

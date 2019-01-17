@@ -1,21 +1,14 @@
-<!-- <div *ngIf="quote">
+<div *ngIf="quote">
 
-    <h2>Quote Details</h2>
-    <div><span>contributor: </span>{{quote.contributor}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="quote.author" placeholder="author"/>
-      </label>
-    </div>
-  
-  </div> -->
+  <h2>{{quote.quote | uppercase}} Details</h2>
+  <div><span>contributor: </span>{{quote.contributor}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="quote.category" placeholder="category"/>
+    </label>
+  </div>
 
- <!-- property binding -->
+</div>
 
- <!-- 
-<app-quote-detail [quote]="selectedQuote"></app-quote-detail> -->
 
-<div>
-    <app-quote-vote></app-quote-vote>
-    </div>
 
